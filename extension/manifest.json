@@ -1,0 +1,23 @@
+
+{
+  "name": "Amazon Prime Now Checker",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_title": "Checks if a product on Amazon is available on Prime Now in your area",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "permissions": [
+        "*://*.amazon.com/*",
+        "*://primenow.amazon.com/*"
+      ],
+      "matches": [
+        "*://www.amazon.com/*",
+        "*://primenow.amazon.com/*"
+      ],
+      "js": ["jquery-3.2.1.min.js","content.js"]
+    }
+  ]
+}
